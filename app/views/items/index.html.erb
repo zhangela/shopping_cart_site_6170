@@ -23,5 +23,7 @@
 </table>
 <br />
 
-<%= link_to 'View Cart', cart_path %>
+<% if !current_cart.is_empty %>
+    <%= link_to 'View Cart', cart_path %>
+<% end %>
 <%= link_to 'New Item', new_item_path %>

@@ -2,23 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="89625129-f179-410f-8e90-37b0dae3a2ff" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/layouts/application.html.erb" afterPath="$PROJECT_DIR$/app/views/layouts/application.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/application_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/application_controller.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/cart.rb" afterPath="$PROJECT_DIR$/app/models/cart.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/carts_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/carts_controller.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/cartitems/index.html.erb" afterPath="$PROJECT_DIR$/app/views/cartitems/index.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/sessions_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/sessions_controller.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/cartitems/show.html.erb" afterPath="$PROJECT_DIR$/app/views/cartitems/show.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/carts/show.html.erb" afterPath="$PROJECT_DIR$/app/views/carts/show.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/users_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/users_controller.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/items/index.html.erb" afterPath="$PROJECT_DIR$/app/views/items/index.html.erb" />
     </list>
     <ignored path="angelaz_proj2.iws" />
     <ignored path=".idea/workspace.xml" />
     <file path="/Dummy.txt" changelist="89625129-f179-410f-8e90-37b0dae3a2ff" time="1362531921047" ignored="false" />
     <file path="/cart.rb" changelist="89625129-f179-410f-8e90-37b0dae3a2ff" time="1362642484367" ignored="false" />
     <file path="/cartitems_controller.rb" changelist="89625129-f179-410f-8e90-37b0dae3a2ff" time="1362639580741" ignored="false" />
-    <file path="/index.html.erb" changelist="89625129-f179-410f-8e90-37b0dae3a2ff" time="1362642110544" ignored="false" />
+    <file path="/index.html.erb" changelist="89625129-f179-410f-8e90-37b0dae3a2ff" time="1362644605248" ignored="false" />
     <file path="/cartitem.rb" changelist="89625129-f179-410f-8e90-37b0dae3a2ff" time="1362559234456" ignored="false" />
     <file path="/application_controller.rb" changelist="89625129-f179-410f-8e90-37b0dae3a2ff" time="1362642654827" ignored="false" />
     <file path="/show.html.erb" changelist="89625129-f179-410f-8e90-37b0dae3a2ff" time="1362644333872" ignored="false" />
@@ -79,10 +70,19 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="new.html.erb" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="new.html.erb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/sessions/new.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="12" column="78" selection-start="296" selection-end="296" vertical-scroll-proportion="0.29605263">
+            <state line="12" column="27" selection-start="296" selection-end="296" vertical-scroll-proportion="-7.5">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.html.erb" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/views/items/index.html.erb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="25" column="7" selection-start="556" selection-end="556" vertical-scroll-proportion="0.6302521">
               <folding />
             </state>
           </provider>
@@ -124,15 +124,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="cart.rb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/models/cart.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="16" column="16" selection-start="438" selection-end="438" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
     </leaf>
   </component>
   <component name="FindManager">
@@ -153,7 +144,6 @@
       <list>
         <option value="$PROJECT_DIR$/app/models/cartitem.rb" />
         <option value="$PROJECT_DIR$/app/views/cartitems/_form.html.erb" />
-        <option value="$PROJECT_DIR$/app/views/items/index.html.erb" />
         <option value="$PROJECT_DIR$/app/controllers/cartitems_controller.rb" />
         <option value="$PROJECT_DIR$/config/routes.rb" />
         <option value="$PROJECT_DIR$/app/controllers/users_controller.rb" />
@@ -165,6 +155,7 @@
         <option value="$PROJECT_DIR$/app/controllers/application_controller.rb" />
         <option value="$PROJECT_DIR$/app/views/carts/show.html.erb" />
         <option value="$PROJECT_DIR$/app/views/layouts/application.html.erb" />
+        <option value="$PROJECT_DIR$/app/views/items/index.html.erb" />
       </list>
     </option>
   </component>
@@ -799,13 +790,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/items/index.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="25" column="34" selection-start="574" selection-end="583" vertical-scroll-proportion="-15.625">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/models/cart.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="16" column="16" selection-start="438" selection-end="438" vertical-scroll-proportion="0.0">
@@ -871,7 +855,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/sessions/new.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="78" selection-start="296" selection-end="296" vertical-scroll-proportion="0.29605263">
+        <state line="12" column="27" selection-start="296" selection-end="296" vertical-scroll-proportion="-7.5">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/items/index.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="25" column="7" selection-start="556" selection-end="556" vertical-scroll-proportion="0.6302521">
           <folding />
         </state>
       </provider>
