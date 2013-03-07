@@ -4,20 +4,26 @@
   <tr>
     <th>Name</th>
     <th>Price</th>
-    <th>Add to Cart</th>
-    <th>Show</th>
-    <th>Edit</th>
-    <th>Destroy</th>
+
+    <% if current_user && current_user.is_seller %>
+        <th>Edit</th>
+        <th>Destroy</th>
+    <% else %>
+        <th>Add to Cart</th>
+    <% end %>
   </tr>
 
 <% @items.each do |item| %>
   <tr>
     <td><%= item.name %></td>
     <td><%= item.price %></td>
-    <td><%= link_to 'Add to Cart', new_cartitem_path(:item_id => item.id) %></td>
-    <td><%= link_to 'Show', item %></td>
-    <td><%= link_to 'Edit', edit_item_path(item) %></td>
-    <td><%= link_to 'Destroy', item, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+
+    <% if current_user && current_user.is_seller %>
+        <td><%= link_to 'Edit', edit_item_path(item) %></td>
+        <td><%= link_to 'Destroy', item, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <% else %>
+        <td><%= link_to 'Add to Cart', new_cartitem_path(:item_id => item.id) %></td>
+  <% end %>
   </tr>
 <% end %>
 </table>
@@ -27,7 +33,8 @@
     <div class="btn">
         <%= link_to 'View Cart', cart_path %>
     </div>
+<% else %>
+    <div class="btn">
+        <%= link_to 'New Item', new_item_path %>
+    </div>
 <% end %>
-<div class="btn">
-    <%= link_to 'New Item', new_item_path %>
-</div>
