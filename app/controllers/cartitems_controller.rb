@@ -37,7 +37,7 @@ class CartitemsController < ApplicationController
 
 
       respond_to do |format|
-        format.html { redirect_to cart_url }
+        format.html { redirect_to cartitems_url }
         format.json { head :no_content }
       end
     end
@@ -52,11 +52,6 @@ class CartitemsController < ApplicationController
   # POST /cartitems
   # POST /cartitems.json
   def create
-
-    puts "IN CREATE"
-    puts params[:item_id]
-    # HERE
-    # WHY ARE UESR AND CART BLANK
     @cartitem = Cartitem.new(params[:cartitem])
 
     respond_to do |format|
