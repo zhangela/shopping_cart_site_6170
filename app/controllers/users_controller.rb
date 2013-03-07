@@ -12,4 +12,8 @@ class UsersController < ApplicationController
         render :new
       end
     end
+
+    def new_cart
+
+    end
 end

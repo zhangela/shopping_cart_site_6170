@@ -2,6 +2,7 @@ class ApplicationController < ActionController::Base
 
     protect_from_forgery
     helper_method :current_user
+    helper_method :current_cart
     before_filter :add_value_to_session
 
     # This can be toggled to inspect the session hash.
@@ -11,12 +12,21 @@ class ApplicationController < ActionController::Base
     private
 
     def add_value_to_session
-    session[:message] = "Hello World!"
+        session[:message] = "Hello World!"
     end
 
     private
     def current_user
-    @current_user ||= User.find(session[:user_id]) if session[:user_id]
-  end
+        @current_user ||= User.find(session[:user_id]) if session[:user_id]
+    end
+
+    private
+    def current_cart 
+      Cart.find(session[:cart_id])
+    rescue ActiveRecord::RecordNotFound
+      cart = Cart.create
+      cart.user = current_user
+      session[:cart_id] = cart.id
+    end
 
 end

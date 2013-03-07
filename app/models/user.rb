@@ -1,5 +1,9 @@
 class User < ActiveRecord::Base
+  
   attr_accessible :email, :password, :password_confirmation
+
+  has_one :cart
+
   
   attr_accessor :password
   before_save :encrypt_password

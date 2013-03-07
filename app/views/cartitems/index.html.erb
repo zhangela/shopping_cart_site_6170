@@ -1,0 +1,27 @@
+<h1>Listing cartitems</h1>
+
+<table>
+  <tr>
+    <th>Quantity</th>
+    <th>Item</th>
+    <th>Cart</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @cartitems.each do |cartitem| %>
+  <tr>
+    <td><%= cartitem.quantity %></td>
+    <td><%= cartitem.item %></td>
+    <td><%= cartitem.cart %></td>
+    <td><%= link_to 'Show', cartitem %></td>
+    <td><%= link_to 'Edit', edit_cartitem_path(cartitem) %></td>
+    <td><%= link_to 'Destroy', cartitem, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Cartitem', new_cartitem_path %>
