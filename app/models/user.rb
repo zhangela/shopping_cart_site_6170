@@ -1,6 +1,6 @@
 class User < ActiveRecord::Base
   
-  attr_accessible :email, :password, :password_confirmation
+  attr_accessible :email, :password, :password_confirmation, :usertype
 
   has_one :cart
 
@@ -27,5 +27,9 @@ class User < ActiveRecord::Base
       self.password_salt = BCrypt::Engine.generate_salt
       self.password_hash = BCrypt::Engine.hash_secret(password, password_salt)
     end
+  end
+
+  def is_seller
+    return self.usertype == 1
   end
 end

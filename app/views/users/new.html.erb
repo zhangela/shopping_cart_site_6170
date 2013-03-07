@@ -23,5 +23,10 @@
     <%= f.label :password_confirmation %><br />
     <%= f.password_field :password_confirmation %>
   </p>
+
+    <p>
+      <%= f.label :usertype %><br />
+      <%= select_tag(:usertype, options_for_select([['Seller', 1], ['Buyer', 2]])) %>
+    </p>
   <p class="button"><%= f.submit %></p>
 <% end %>
