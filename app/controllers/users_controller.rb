@@ -7,6 +7,9 @@ class UsersController < ApplicationController
       @user = User.new(params[:user])
       if @user.save
         session[:user_id] = user.id
+        cart = current_cart
+        cart.user = @user
+        cart.save
         redirect_to root_url, :notice => "Signed up!"
       else
         render :new

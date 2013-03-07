@@ -1,10 +1,9 @@
-<h1>Listing cartitems</h1>
+<h1>All Items in Cart</h1>
 
 <table>
   <tr>
+    <th>Item Name</th>
     <th>Quantity</th>
-    <th>Item</th>
-    <th>Cart</th>
     <th></th>
     <th></th>
     <th></th>
@@ -12,16 +11,15 @@
 
 <% @cartitems.each do |cartitem| %>
   <tr>
+    <td><%= cartitem.item.name %></td>
     <td><%= cartitem.quantity %></td>
-    <td><%= cartitem.item %></td>
-    <td><%= cartitem.cart %></td>
-    <td><%= link_to 'Show', cartitem %></td>
-    <td><%= link_to 'Edit', edit_cartitem_path(cartitem) %></td>
-    <td><%= link_to 'Destroy', cartitem, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <td><%= link_to 'Edit Quantity', edit_cartitem_path(cartitem) %></td>
+    <td><%= link_to 'Remove', cartitem, method: :delete, data: { confirm: 'Are you sure?' } %></td>
   </tr>
 <% end %>
 </table>
 
 <br />
 
-<%= link_to 'New Cartitem', new_cartitem_path %>
+
+<%= link_to 'Continue Shopping', items_path %>

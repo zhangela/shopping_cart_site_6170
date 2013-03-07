@@ -17,4 +17,12 @@ class Cart < ActiveRecord::Base
     end
     return current_item
   end
+
+
+  def is_empty
+    if cartitems.count == 0
+      return true
+    end
+    return false
+  end
 end

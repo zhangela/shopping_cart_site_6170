@@ -1,8 +1,11 @@
-<p id="notice"><%= notice %></p>
+<h1>Items In Cart</h1>
 
 <p>
-  <b>User:</b>
-  <%= @cart.user %>
+
+  <% if @cart.user %>
+      <b>User:</b>
+      <%= @cart.user.email %>
+  <% end %>
 </p>
 
 <table>
@@ -12,20 +15,20 @@
     <th>Quantity</th>
     <th></th>
     <th></th>
-    <th></th>
   </tr>
 
   <% @cart.cartitems.each do |cartitem| %>
       <tr>
-        <td><%= cartitem.item.name %></td>
+        <td><%= link_to cartitem.item.name, edit_cartitem_path(cartitem) %></td>
         <td><%= cartitem.item.price %></td>
         <td><%= cartitem.quantity %></td>
-        <td><%= link_to 'Show', cartitem %></td>
         <td><%= link_to 'Edit', edit_cartitem_path(cartitem) %></td>
-        <td><%= link_to 'Destroy', cartitem, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Delete', cartitem, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
   <% end %>
 </table>
 
-<%= link_to 'Edit', edit_cart_path(@cart) %> |
-<%= link_to 'Back', carts_path %>
+<br/>
+<%= link_to 'Continue Shopping', items_path %>
+
+

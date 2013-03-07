@@ -14,11 +14,18 @@ class CartsController < ApplicationController
   # GET /carts/1.json
   def show
     @cart = current_cart
+    @cart.save
 
-    respond_to do |format|
-      format.html # show.html.erb
-      format.json { render json: @cart }
-    end
+    if !@cart.is_empty
+      respond_to do |format|
+        format.html # show.html.erb
+        format.json { render json: @cart }
+      end
+    else
+      respond_to do |format|
+        format.html { redirect_to items_url }
+        format.json { head :no_content }
+      end    end
   end
 
   # GET /carts/new
