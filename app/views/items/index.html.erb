@@ -1,13 +1,13 @@
 <h1>Listing items</h1>
 
-<table>
+<table class="table">
   <tr>
     <th>Name</th>
     <th>Price</th>
-    <th></th>
-    <th></th>
-    <th></th>
-    <th></th>
+    <th>Add to Cart</th>
+    <th>Show</th>
+    <th>Edit</th>
+    <th>Destroy</th>
   </tr>
 
 <% @items.each do |item| %>
@@ -24,6 +24,10 @@
 <br />
 
 <% if !current_cart.is_empty %>
-    <%= link_to 'View Cart', cart_path %>
+    <div class="btn">
+        <%= link_to 'View Cart', cart_path %>
+    </div>
 <% end %>
-<%= link_to 'New Item', new_item_path %>
+<div class="btn">
+    <%= link_to 'New Item', new_item_path %>
+</div>

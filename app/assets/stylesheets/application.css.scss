@@ -11,3 +11,7 @@
  *= require_self
  *= require_tree .
  */
+
+@import "bootstrap.css";
+body { padding-top: 60px; }
+@import "bootstrap-responsive.css";

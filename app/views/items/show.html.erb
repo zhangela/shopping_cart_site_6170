@@ -10,6 +10,9 @@
   <%= @item.price %>
 </p>
 
-
-<%= link_to 'Edit', edit_item_path(@item) %> |
+<div class="btn">
+<%= link_to 'Edit', edit_item_path(@item) %>
+</div>
+<div class="btn">
 <%= link_to 'Back', items_path %>
+</div>

@@ -5,7 +5,9 @@
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
+
 </head>
+
 <body>
 
 <%= yield %>
@@ -14,10 +16,17 @@
   <br />
   <% if current_user %>
     Logged in as <%= current_user.email %>.
-    <%= link_to "Log out", log_out_path %>
+      <div class="btn">
+      <%= link_to "Log out", log_out_path %>
+      </div>
   <% else %>
-    <%= link_to "Sign up", sign_up_path %> or
-    <%= link_to "log in", log_in_path %>
+      <div class="btn">
+      <%= link_to "Sign up", sign_up_path %>
+      </div>
+      or
+      <div class="btn">
+      <%= link_to "log in", log_in_path %>
+      </div>
   <% end %>
 </div>
 
