@@ -2,6 +2,7 @@ AngelazProj2::Application.routes.draw do
 
   get "cart" => "carts#show"
   get "submit_cart" => "carts#submit_cart"
+  get "approve_cart" => "carts#approve_cart"
 
   resources :items
 

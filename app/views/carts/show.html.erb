@@ -30,16 +30,21 @@
 
 <br/>
 
-<h1> <%= @cart.id %></h1>
-<h2>STATUS: <%= @cart.status %> </h2>
+<% if current_user && current_user.is_seller %>
+    <div class="btn">
+      <%= link_to 'Approve', approve_cart_path(:cart_id => @cart.id) %>
+    </div>
 
 
-<div class="btn">
-    <%= link_to 'Continue Shopping', items_path %>
-</div>
+<% else %>
+    <div class="btn">
+        <%= link_to 'Continue Shopping', items_path %>
+    </div>
 
-<div class="btn">
-  <%= link_to 'Place Order', :method => submit_cart %>
-</div>
+
+    <div class="btn">
+      <%= link_to 'Place Order', :method => submit_cart %>
+    </div>
+<% end %>
 
 

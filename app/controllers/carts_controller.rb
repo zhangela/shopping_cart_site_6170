@@ -111,4 +111,18 @@ class CartsController < ApplicationController
     end
   end
 
+
+  def approve_cart()
+    cart = Cart.find(params[:cart_id])
+    if cart.status == 1
+      cart.set_status(2)
+      cart.save
+    end
+
+    respond_to do |format|
+      format.html { redirect_to items_path }
+      format.json { head :no_content }
+    end
+  end
+
 end

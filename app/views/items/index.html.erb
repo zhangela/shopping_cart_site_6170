@@ -76,6 +76,10 @@
       <% end %>
     </table>
 
+    <div class="btn">
+      <%= link_to 'New Item', new_item_path %>
+    </div>
+
 <% else %>
     <h1>Submitted Orders</h1>
 
@@ -129,8 +133,4 @@
         <%= link_to 'View Cart', cart_path %>
     </div>
 
-<% else %>
-    <div class="btn">
-        <%= link_to 'New Item', new_item_path %>
-    </div>
 <% end %>
