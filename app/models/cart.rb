@@ -2,7 +2,7 @@ class Cart < ActiveRecord::Base
   belongs_to :user
   has_many :cartitems, dependent: :destroy
 
-  attr_accessible :user, :cartitems
+  attr_accessible :user, :cartitems, :status
 
 
   def add_item(item_id)
@@ -24,5 +24,12 @@ class Cart < ActiveRecord::Base
       return true
     end
     return false
+  end
+
+  def set_status(newstat)
+    self.status = newstat
+    self.save
+    puts "SELF STATUS"
+    puts self.status
   end
 end

@@ -13,8 +13,12 @@ class CartsController < ApplicationController
   # GET /carts/1
   # GET /carts/1.json
   def show
-    @cart = current_cart
-    @cart.save
+
+    if params[:cart_id]
+      @cart = Cart.find(params[:cart_id])
+    else
+      @cart = current_cart
+    end
 
     if !@cart.is_empty
       respond_to do |format|
@@ -33,6 +37,7 @@ class CartsController < ApplicationController
   def new
     @cart = Cart.new
 
+
     respond_to do |format|
       format.html # new.html.erb
       format.json { render json: @cart }
@@ -48,6 +53,7 @@ class CartsController < ApplicationController
   # POST /carts.json
   def create
     @cart = Cart.new(params[:cart])
+    @cart.status = 0
 
     respond_to do |format|
       if @cart.save
@@ -87,4 +93,22 @@ class CartsController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+
+  def submit_cart
+    @cart = current_cart
+    puts @cart.status
+    if @cart.status == 0 || @cart.status == ""
+      puts "asdf CART NOT SUBMITTED"
+      @cart.set_status(1)
+      puts "asdf STATUS BEFORE SAVE"
+      puts @cart.status
+      @cart.save
+      puts "STATUS"
+      puts @cart.status
+    else
+      puts "asdf CART STATUS IS STRANGE"
+    end
+  end
+
 end

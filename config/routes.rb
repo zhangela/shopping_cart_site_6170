@@ -1,6 +1,8 @@
 AngelazProj2::Application.routes.draw do
 
   get "cart" => "carts#show"
+  get "submit_cart" => "carts#submit_cart"
+
   resources :items
 
   resources :cartitems

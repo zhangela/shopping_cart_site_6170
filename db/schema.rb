@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130307175330) do
+ActiveRecord::Schema.define(:version => 20130310051615) do
 
   create_table "cartitems", :force => true do |t|
     t.integer  "quantity"
@@ -26,8 +26,9 @@ ActiveRecord::Schema.define(:version => 20130307175330) do
 
   create_table "carts", :force => true do |t|
     t.integer  "user_id"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",                :null => false
+    t.datetime "updated_at",                :null => false
+    t.integer  "status",     :default => 0
   end
 
   add_index "carts", ["user_id"], :name => "index_carts_on_user_id"

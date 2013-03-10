@@ -30,12 +30,16 @@
 
 <br/>
 
+<h1> <%= @cart.id %></h1>
+<h2>STATUS: <%= @cart.status %> </h2>
+
+
 <div class="btn">
     <%= link_to 'Continue Shopping', items_path %>
 </div>
 
 <div class="btn">
-  <%= link_to 'Place Order', items_path %>
+  <%= link_to 'Place Order', :method => submit_cart %>
 </div>
 
 

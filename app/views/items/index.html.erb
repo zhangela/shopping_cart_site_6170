@@ -29,10 +29,106 @@
 </table>
 <br />
 
+
+
+<% if current_user && current_user.is_seller %>
+
+    <h1>Submitted Orders</h1>
+
+    <table class="table">
+      <tr>
+        <th>Cart ID</th>
+        <th>Buyer Email</th>
+        <th>Show & Approve</th>
+        <th>Delete</th>
+      </tr>
+
+      <% @carts = all_submitted_carts %>
+      <% @carts.each do |cart| %>
+
+              <tr>
+                <td><%= cart.id %></td>
+                <td><%= cart.user.email %></td>
+                <td><%= link_to 'Show', cart_path(:cart_id => cart.id) %></td>
+                <td><%= link_to 'Destroy', cart, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+              </tr>
+      <% end %>
+    </table>
+
+
+    <h1>Approved Orders</h1>
+
+    <table class="table">
+      <tr>
+        <th>Cart ID</th>
+        <th>Show</th>
+        <th>Delete</th>
+      </tr>
+
+      <% @carts = all_approved_carts %>
+      <% @carts.each do |cart| %>
+
+              <tr>
+                <td><%= cart.id %></td>
+                <td><%= link_to 'Show', cart_path %></td>
+                <td><%= link_to 'Destroy', cart, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+              </tr>
+      <% end %>
+    </table>
+
+<% else %>
+    <h1>Submitted Orders</h1>
+
+        <table class="table">
+            <tr>
+                <th>Cart ID</th>
+                <th>Show</th>
+                <th>Delete</th>
+            </tr>
+
+            <% @carts = all_submitted_carts %>
+            <% @carts.each do |cart| %>
+
+                <% if cart.user == current_user %>
+                    <tr>
+                        <td><%= cart.id %></td>
+                        <td><%= link_to 'Show', cart_path %></td>
+                        <td><%= link_to 'Destroy', cart, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+                    </tr>
+                <% end %>
+            <% end %>
+    </table>
+
+
+    <h1>Approved Orders</h1>
+
+    <table class="table">
+      <tr>
+        <th>Cart ID</th>
+        <th>Show</th>
+        <th>Delete</th>
+      </tr>
+
+      <% @carts = all_approved_carts %>
+      <% @carts.each do |cart| %>
+
+          <% if cart.user == current_user %>
+              <tr>
+                <td><%= cart.id %></td>
+                <td><%= link_to 'Show', cart_path %></td>
+                <td><%= link_to 'Destroy', cart, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+              </tr>
+          <% end %>
+      <% end %>
+    </table>
+
+    <% end %>
+
 <% if !current_cart.is_empty %>
     <div class="btn">
         <%= link_to 'View Cart', cart_path %>
     </div>
+
 <% else %>
     <div class="btn">
         <%= link_to 'New Item', new_item_path %>

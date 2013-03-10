@@ -3,6 +3,10 @@ class ApplicationController < ActionController::Base
     protect_from_forgery
     helper_method :current_user
     helper_method :current_cart
+    helper_method :all_submitted_carts
+    helper_method :all_approved_carts
+    helper_method :submit_cart
+    helper_method :approve_cart
     before_filter :add_value_to_session
 
     # This can be toggled to inspect the session hash.
@@ -17,7 +21,9 @@ class ApplicationController < ActionController::Base
 
     private
     def current_user
-        @current_user ||= User.find(session[:user_id]) if session[:user_id]
+      if session[:user_id] && User.exists?(session[:user_id])
+        @current_user ||= User.find(session[:user_id])
+      end
     end
 
     private
@@ -28,8 +34,45 @@ class ApplicationController < ActionController::Base
         cart.user = current_user
         session[:cart_id] = cart.id
         cart.save
-
       return cart
+    end
+
+    private
+    def all_submitted_carts
+      carts = Cart.find_all_by_status(1)
+      return carts
+    end
+
+    private
+    def all_approved_carts
+      carts = Cart.find_all_by_status(2)
+      return carts
+    end
+
+    #private
+    #def submit_cart
+    #  @cart = current_cart
+    #  puts @cart.status
+    #  if @cart.status == 0 || @cart.status == ""
+    #    puts "asdf CART NOT SUBMITTED"
+    #    @cart.set_status(1)
+    #    puts "asdf STATUS BEFORE SAVE"
+    #    puts @cart.status
+    #    @cart.save
+    #    puts "STATUS"
+    #    @cart.status
+    #  else
+    #    puts "asdf CART STATUS IS STRANGE"
+    #  end
+    #end
+
+    private
+    def approve_cart(cartid)
+      cart = Cart.find(cartid)
+      if cart.status == 1
+        cart.set_status(2)
+        cart.save
+      end
     end
 
 end
