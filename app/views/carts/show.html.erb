@@ -30,6 +30,9 @@
 
 <br/>
 
+
+<p><%= @cart.status %></p>
+
 <% if current_user && current_user.is_seller %>
     <div class="btn">
       <%= link_to 'Approve', approve_cart_path(:cart_id => @cart.id) %>

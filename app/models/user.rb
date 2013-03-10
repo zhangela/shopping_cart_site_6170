@@ -2,7 +2,7 @@ class User < ActiveRecord::Base
   
   attr_accessible :email, :password, :password_confirmation, :usertype
 
-  has_one :cart
+  has_many :carts
 
   
   attr_accessor :password

@@ -27,14 +27,47 @@ class ApplicationController < ActionController::Base
     end
 
     private
-    def current_cart 
-      cart = Cart.find(session[:cart_id])
-      rescue ActiveRecord::RecordNotFound
-        cart = Cart.create
-        cart.user = current_user
-        session[:cart_id] = cart.id
-        cart.save
+    #def current_cart
+    #  cart = Cart.find(session[:cart_id])
+    #  puts "CART IS FOUND"
+    #  rescue ActiveRecord::RecordNotFound
+    #    puts "CART IS NOT FOUND"
+    #    cart = Cart.create
+    #    cart.user = current_user
+    #    cart.status = 0
+    #    session[:cart_id] = cart.id
+    #    cart.save
+    #
+    #  if cart.status != 0
+    #    puts "CART STATUS IS NOT 0"
+    #    cart = Cart.create
+    #    cart.user = current_user
+    #    session[:cart_id] = cart.id
+    #    cart.save
+    #  end
+    #  return cart
+    #end
+
+
+    def current_cart
+      exist = Cart.exists?(session[:cart_id])
+      puts "EXISTS?"
+      puts exist
+      if exist
+        cart = Cart.find(session[:cart_id])
+        if cart.status == 0
+          puts "STATUS = 0"
+          return cart
+        end
+      end
+
+      puts "CREATING CART"
+      cart = Cart.create
+      cart.user = current_user
+      session[:cart_id] = cart.id
+      cart.save
       return cart
+
     end
 
     private
@@ -47,32 +80,6 @@ class ApplicationController < ActionController::Base
     def all_approved_carts
       carts = Cart.find_all_by_status(2)
       return carts
-    end
-
-    #private
-    #def submit_cart
-    #  @cart = current_cart
-    #  puts @cart.status
-    #  if @cart.status == 0 || @cart.status == ""
-    #    puts "asdf CART NOT SUBMITTED"
-    #    @cart.set_status(1)
-    #    puts "asdf STATUS BEFORE SAVE"
-    #    puts @cart.status
-    #    @cart.save
-    #    puts "STATUS"
-    #    @cart.status
-    #  else
-    #    puts "asdf CART STATUS IS STRANGE"
-    #  end
-    #end
-
-    private
-    def approve_cart(cartid)
-      cart = Cart.find(cartid)
-      if cart.status == 1
-        cart.set_status(2)
-        cart.save
-      end
     end
 
 end

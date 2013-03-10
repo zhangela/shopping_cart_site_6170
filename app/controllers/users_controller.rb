@@ -6,8 +6,6 @@ class UsersController < ApplicationController
     def create
       @user = User.new(params[:user])
       @user.usertype = params[:usertype]
-      puts "TYPE"
-      puts @user.usertype
       if @user.save
         session[:user_id] = @user.id
         cart = current_cart
