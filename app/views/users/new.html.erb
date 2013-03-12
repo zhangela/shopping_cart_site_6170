@@ -28,5 +28,9 @@
       <%= f.label :usertype %><br />
       <%= select_tag(:usertype, options_for_select([['Seller', 1], ['Buyer', 2]])) %>
     </p>
+
+    <p>
+      All sellers share a catalog & have equal permission.
+    </p>
   <p class="button"><%= f.submit %></p>
 <% end %>
