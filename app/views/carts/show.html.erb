@@ -71,10 +71,13 @@
         <%= link_to 'Continue Shopping', items_path %>
     </div>
 
-
-    <div class="btn">
-      <%= link_to 'Place Order', submit_cart_path %>
-    </div>
+    <% if current_user.email %>
+        <div class="btn">
+          <%= link_to 'Place Order', submit_cart_path %>
+        </div>
+    <% else %>
+        <p>Log in to place order!</p>
+    <% end %>
 <% end %>
 
 
