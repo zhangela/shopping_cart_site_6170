@@ -1,8 +1,8 @@
 class User < ActiveRecord::Base
   
-  attr_accessible :email, :password, :password_confirmation, :usertype
+  attr_accessible :carts, :email, :password, :password_confirmation, :usertype
 
-  has_many :carts
+  has_many :carts, :dependent => :destroy
 
   
   attr_accessor :password

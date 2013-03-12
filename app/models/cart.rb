@@ -32,4 +32,5 @@ class Cart < ActiveRecord::Base
     puts "SELF STATUS"
     puts self.status
   end
+
 end

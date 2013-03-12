@@ -1,13 +1,11 @@
 AngelazProj2::Application.routes.draw do
 
+
+  match '/submit_cart' => 'carts#submit_cart', :as => 'submit_cart'
   get "cart" => "carts#show"
-  get "submit_cart" => "carts#submit_cart"
-  get "approve_cart" => "carts#approve_cart"
 
   resources :items
-
   resources :cartitems
-
   resources :carts
 
   get "sessions/new"

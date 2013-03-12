@@ -20,8 +20,12 @@ class SessionsController < ApplicationController
 
     def destroy
       session[:user_id] = nil
-      cart = current_cart
-      cart.destroy
+      if current_user && !current_user.is_seller && current_cart
+        cart = current_cart
+        if cart
+          cart.destroy
+        end
+      end
       redirect_to root_url, :notice => "Logged out!"
     end
 end

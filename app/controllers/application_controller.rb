@@ -5,8 +5,6 @@ class ApplicationController < ActionController::Base
     helper_method :current_cart
     helper_method :all_submitted_carts
     helper_method :all_approved_carts
-    helper_method :submit_cart
-    helper_method :approve_cart
     before_filter :add_value_to_session
 
     # This can be toggled to inspect the session hash.
@@ -62,7 +60,7 @@ class ApplicationController < ActionController::Base
       end
 
       puts "CREATING CART"
-      cart = Cart.create
+      cart = Cart.create(:status => 0)
       cart.user = current_user
       session[:cart_id] = cart.id
       cart.save

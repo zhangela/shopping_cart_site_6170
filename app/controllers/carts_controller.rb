@@ -29,7 +29,8 @@ class CartsController < ApplicationController
       respond_to do |format|
         format.html { redirect_to items_url }
         format.json { head :no_content }
-      end    end
+      end
+    end
   end
 
   # GET /carts/new
@@ -89,7 +90,7 @@ class CartsController < ApplicationController
     @cart.destroy
 
     respond_to do |format|
-      format.html { redirect_to carts_url }
+      format.html { redirect_to items_url }
       format.json { head :no_content }
     end
   end
@@ -109,10 +110,15 @@ class CartsController < ApplicationController
     else
       puts "asdf CART STATUS IS STRANGE"
     end
+
+    respond_to do |format|
+      format.html { redirect_to items_url }
+      format.json { head :no_content }
+    end
   end
 
 
-  def approve_cart()
+  def approve_cart
     cart = Cart.find(params[:cart_id])
     if cart.status == 1
       cart.set_status(2)
