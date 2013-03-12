@@ -100,19 +100,12 @@ class CartsController < ApplicationController
     @cart = current_cart
     puts @cart.status
     if @cart.status == 0 || @cart.status == ""
-      puts "asdf CART NOT SUBMITTED"
       @cart.set_status(1)
-      puts "asdf STATUS BEFORE SAVE"
-      puts @cart.status
       @cart.save
-      puts "STATUS"
-      puts @cart.status
-    else
-      puts "asdf CART STATUS IS STRANGE"
     end
 
     respond_to do |format|
-      format.html { redirect_to items_url }
+      format.html { redirect_to items_path }
       format.json { head :no_content }
     end
   end

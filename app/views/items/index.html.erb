@@ -7,7 +7,6 @@
 
     <% if current_user && current_user.is_seller %>
         <th>Edit</th>
-        <th>Destroy</th>
     <% else %>
         <th>Add to Cart</th>
     <% end %>
@@ -20,7 +19,6 @@
 
     <% if current_user && current_user.is_seller %>
         <td><%= link_to 'Edit', edit_item_path(item) %></td>
-        <td><%= link_to 'Destroy', item, method: :delete, data: { confirm: 'Are you sure?' } %></td>
     <% else %>
         <td><%= link_to 'Add to Cart', new_cartitem_path(:item_id => item.id) %></td>
   <% end %>
@@ -40,7 +38,6 @@
         <th>Cart ID</th>
         <th>Buyer Email</th>
         <th>Show & Approve</th>
-        <th>Delete</th>
       </tr>
 
       <% @carts = all_submitted_carts %>
@@ -50,7 +47,7 @@
                 <td><%= cart.id %></td>
                 <td><%= cart.user.email %></td>
                 <td><%= link_to 'Show', cart_path(:cart_id => cart.id) %></td>
-                <td><%= link_to 'Destroy', cart, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+
               </tr>
       <% end %>
     </table>
@@ -61,8 +58,8 @@
     <table class="table">
       <tr>
         <th>Cart ID</th>
+        <th>Buyer Email</th>
         <th>Show</th>
-        <th>Delete</th>
       </tr>
 
       <% @carts = all_approved_carts %>
@@ -70,8 +67,8 @@
 
               <tr>
                 <td><%= cart.id %></td>
+                <td><%= cart.user.email %></td>
                 <td><%= link_to 'Show', cart_path(:cart_id => cart.id) %></td>
-                <td><%= link_to 'Destroy', cart, method: :delete, data: { confirm: 'Are you sure?' } %></td>
               </tr>
       <% end %>
     </table>
@@ -97,7 +94,6 @@
                     <tr>
                         <td><%= cart.id %></td>
                         <td><%= link_to 'Show', cart_path(:cart_id => cart.id) %></td>
-                        <td><%= link_to 'Destroy', cart, method: :delete, data: { confirm: 'Are you sure?' } %></td>
                     </tr>
                 <% end %>
             <% end %>
@@ -120,7 +116,6 @@
               <tr>
                 <td><%= cart.id %></td>
                 <td><%= link_to 'Show', cart_path(:cart_id => cart.id) %></td>
-                <td><%= link_to 'Destroy', cart, method: :delete, data: { confirm: 'Are you sure?' } %></td>
               </tr>
           <% end %>
       <% end %>

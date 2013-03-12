@@ -2,6 +2,8 @@ AngelazProj2::Application.routes.draw do
 
 
   match '/submit_cart' => 'carts#submit_cart', :as => 'submit_cart'
+  match '/approve_cart' => 'carts#approve_cart', :as => 'approve_cart'
+
   get "cart" => "carts#show"
 
   resources :items

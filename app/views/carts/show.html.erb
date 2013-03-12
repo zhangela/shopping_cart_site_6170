@@ -3,9 +3,27 @@
 <p>
 
   <% if @cart.user %>
-      <b>User:</b>
+      <b>Buyer:</b>
       <%= @cart.user.email %>
   <% end %>
+</p>
+
+<p>
+
+  <b>Status:</b>
+  <% if @cart.status == 0 %>
+      Unsubmitted
+  <% end %>
+  <% if @cart.status == 1 %>
+      Submitted
+  <% end %>
+  <% if @cart.status == 2 %>
+      Approved
+  <% end %>
+  <% if @cart.status == -1 %>
+      Denied by Seller
+  <% end %>
+
 </p>
 
 <table class="table">
@@ -31,11 +49,16 @@
 <br/>
 
 
-<p><%= @cart.status %></p>
-
 <% if current_user && current_user.is_seller %>
+
+    <% if @cart.status == 1 %>
+        <div class="btn">
+          <%= link_to 'Approve', approve_cart_path(:cart_id => @cart.id) %>
+        </div>
+    <% end %>
+
     <div class="btn">
-      <%= link_to 'Approve', approve_cart_path(:cart_id => @cart.id) %>
+      <%= link_to 'Back', items_path %>
     </div>
 
 
