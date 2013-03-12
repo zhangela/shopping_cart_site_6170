@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="89625129-f179-410f-8e90-37b0dae3a2ff" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/sessions_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/sessions_controller.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="angelaz_proj2.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -110,7 +108,7 @@
       <file leaf-file-name="sessions_controller.rb" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/controllers/sessions_controller.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="10" column="39" selection-start="286" selection-end="286" vertical-scroll-proportion="0.2283105">
+            <state line="28" column="13" selection-start="699" selection-end="699" vertical-scroll-proportion="0.64122134">
               <folding />
             </state>
           </provider>
@@ -926,7 +924,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/sessions_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="39" selection-start="286" selection-end="286" vertical-scroll-proportion="0.2283105">
+        <state line="28" column="13" selection-start="699" selection-end="699" vertical-scroll-proportion="0.64122134">
           <folding />
         </state>
       </provider>
