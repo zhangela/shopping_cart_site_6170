@@ -51,10 +51,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.html.erb" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="index.html.erb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/items/index.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="163" column="6" selection-start="3803" selection-end="3803" vertical-scroll-proportion="1.5687203">
+            <state line="163" column="6" selection-start="3803" selection-end="3803" vertical-scroll-proportion="-41.375">
               <folding />
             </state>
           </provider>
@@ -69,10 +69,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="new.html.erb" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="new.html.erb" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/views/users/new.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="23" column="70" selection-start="560" selection-end="560" vertical-scroll-proportion="-14.375">
+            <state line="23" column="70" selection-start="560" selection-end="560" vertical-scroll-proportion="0.5450237">
               <folding />
             </state>
           </provider>
@@ -923,13 +923,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/users/new.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="23" column="70" selection-start="560" selection-end="560" vertical-scroll-proportion="-14.375">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/carts/show.html.erb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="4" column="21" selection-start="50" selection-end="50" vertical-scroll-proportion="-2.5">
@@ -946,7 +939,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/items/index.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="163" column="6" selection-start="3803" selection-end="3803" vertical-scroll-proportion="1.5687203">
+        <state line="163" column="6" selection-start="3803" selection-end="3803" vertical-scroll-proportion="-41.375">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/users/new.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="23" column="70" selection-start="560" selection-end="560" vertical-scroll-proportion="0.5450237">
           <folding />
         </state>
       </provider>

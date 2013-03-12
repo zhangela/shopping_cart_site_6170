@@ -3,7 +3,7 @@ Project 2: Shopping Cart
 
 ###Heroku URL
 
-Please put it here: http://sampleapp.herokuapp.com
+Please put it here: http://azcart.herokuapp.com
 
 ###Notes
 
