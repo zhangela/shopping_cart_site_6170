@@ -4,11 +4,13 @@ class SessionsController < ApplicationController
 
     def create
       user = User.authenticate(params[:email], params[:password])
-      if user && !user.is_seller
-        session[:user_id] = user.id
-        cart = current_cart
-        cart.user = user
-        cart.save
+      if user
+        if !user.is_seller
+          session[:user_id] = user.id
+          cart = current_cart
+          cart.user = user
+          cart.save
+        end
         redirect_to root_url, :notice => "Logged in!"
       else
         flash.now.alert = "Invalid email or password"
