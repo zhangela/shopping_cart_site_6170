@@ -55,7 +55,7 @@ class CartitemsController < ApplicationController
     @cartitem = Cartitem.new(params[:cartitem])
 
     respond_to do |format|
-      format.html { redirect_to items_url }
+      format.html { redirect_to cart_path }
       format.json { head :no_content }
     end
   end
@@ -67,7 +67,7 @@ class CartitemsController < ApplicationController
 
     respond_to do |format|
       if @cartitem.update_attributes(params[:cartitem])
-        format.html { redirect_to @cartitem, notice: 'Cartitem was successfully updated.' }
+        format.html { redirect_to cart_path }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }
@@ -83,7 +83,7 @@ class CartitemsController < ApplicationController
     @cartitem.destroy
 
     respond_to do |format|
-      format.html { redirect_to cartitems_url }
+      format.html { redirect_to cart_path }
       format.json { head :no_content }
     end
   end

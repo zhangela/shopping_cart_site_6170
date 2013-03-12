@@ -25,41 +25,14 @@ class ApplicationController < ActionController::Base
     end
 
     private
-    #def current_cart
-    #  cart = Cart.find(session[:cart_id])
-    #  puts "CART IS FOUND"
-    #  rescue ActiveRecord::RecordNotFound
-    #    puts "CART IS NOT FOUND"
-    #    cart = Cart.create
-    #    cart.user = current_user
-    #    cart.status = 0
-    #    session[:cart_id] = cart.id
-    #    cart.save
-    #
-    #  if cart.status != 0
-    #    puts "CART STATUS IS NOT 0"
-    #    cart = Cart.create
-    #    cart.user = current_user
-    #    session[:cart_id] = cart.id
-    #    cart.save
-    #  end
-    #  return cart
-    #end
-
-
     def current_cart
       exist = Cart.exists?(session[:cart_id])
-      puts "EXISTS?"
-      puts exist
       if exist
         cart = Cart.find(session[:cart_id])
         if cart.status == 0
-          puts "STATUS = 0"
           return cart
         end
       end
-
-      puts "CREATING CART"
       cart = Cart.create(:status => 0)
       cart.user = current_user
       session[:cart_id] = cart.id

@@ -4,11 +4,9 @@ class SessionsController < ApplicationController
 
     def create
       user = User.authenticate(params[:email], params[:password])
-      if user
+      if user && !user.is_seller
         session[:user_id] = user.id
         cart = current_cart
-
-        #user.carts.build(cart)
         cart.user = user
         cart.save
         redirect_to root_url, :notice => "Logged in!"

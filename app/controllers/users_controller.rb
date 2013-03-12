@@ -8,9 +8,13 @@ class UsersController < ApplicationController
       @user.usertype = params[:usertype]
       if @user.save
         session[:user_id] = @user.id
-        cart = current_cart
-        cart.user = @user
-        cart.save
+
+        if !@user.is_seller
+          cart = current_cart
+          cart.user = @user
+          cart.save
+        end
+
         redirect_to root_url, :notice => "Signed up!"
       else
         render :new
