@@ -55,6 +55,10 @@
         <div class="btn">
           <%= link_to 'Approve', approve_cart_path(:cart_id => @cart.id) %>
         </div>
+
+        <div class="btn">
+          <%= link_to 'Deny', deny_cart_path(:cart_id => @cart.id) %>
+        </div>
     <% end %>
 
     <div class="btn">

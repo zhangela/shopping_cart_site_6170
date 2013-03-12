@@ -5,6 +5,7 @@ class ApplicationController < ActionController::Base
     helper_method :current_cart
     helper_method :all_submitted_carts
     helper_method :all_approved_carts
+    helper_method :all_denied_carts
     before_filter :add_value_to_session
 
     # This can be toggled to inspect the session hash.
@@ -50,6 +51,12 @@ class ApplicationController < ActionController::Base
     private
     def all_approved_carts
       carts = Cart.find_all_by_status(2)
+      return carts
+    end
+
+    private
+    def all_denied_carts
+      carts = Cart.find_all_by_status(-1)
       return carts
     end
 
