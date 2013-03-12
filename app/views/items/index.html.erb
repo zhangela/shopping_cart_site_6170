@@ -99,66 +99,69 @@
     </div>
 
 <% else %>
-    <h1>Submitted Orders</h1>
+
+    <% if current_user %>
+        <h1>Submitted Orders</h1>
+
+            <table class="table">
+                <tr>
+                    <th>Cart ID</th>
+                    <th>Show</th>
+                </tr>
+
+                <% @carts = all_submitted_carts %>
+                <% @carts.each do |cart| %>
+
+                    <% if cart.user == current_user %>
+                        <tr>
+                            <td><%= cart.id %></td>
+                            <td><%= link_to 'Show', cart_path(:cart_id => cart.id) %></td>
+                        </tr>
+                    <% end %>
+                <% end %>
+        </table>
+
+
+        <h1>Approved Orders</h1>
 
         <table class="table">
-            <tr>
-                <th>Cart ID</th>
-                <th>Show</th>
-            </tr>
+          <tr>
+            <th>Cart ID</th>
+            <th>Show</th>
+          </tr>
 
-            <% @carts = all_submitted_carts %>
-            <% @carts.each do |cart| %>
+          <% @carts = all_approved_carts %>
+          <% @carts.each do |cart| %>
 
-                <% if cart.user == current_user %>
-                    <tr>
-                        <td><%= cart.id %></td>
-                        <td><%= link_to 'Show', cart_path(:cart_id => cart.id) %></td>
-                    </tr>
-                <% end %>
-            <% end %>
-    </table>
-
-
-    <h1>Approved Orders</h1>
-
-    <table class="table">
-      <tr>
-        <th>Cart ID</th>
-        <th>Show</th>
-      </tr>
-
-      <% @carts = all_approved_carts %>
-      <% @carts.each do |cart| %>
-
-          <% if cart.user == current_user %>
-              <tr>
-                <td><%= cart.id %></td>
-                <td><%= link_to 'Show', cart_path(:cart_id => cart.id) %></td>
-              </tr>
+              <% if cart.user == current_user %>
+                  <tr>
+                    <td><%= cart.id %></td>
+                    <td><%= link_to 'Show', cart_path(:cart_id => cart.id) %></td>
+                  </tr>
+              <% end %>
           <% end %>
-      <% end %>
-    </table>
+        </table>
 
-    <h1>Denied Orders</h1>
+        <h1>Denied Orders</h1>
 
-    <table class="table">
-      <tr>
-        <th>Cart ID</th>
-        <th>Show</th>
-      </tr>
+        <table class="table">
+          <tr>
+            <th>Cart ID</th>
+            <th>Show</th>
+          </tr>
 
-      <% @carts = all_denied_carts %>
-      <% @carts.each do |cart| %>
+          <% @carts = all_denied_carts %>
+          <% @carts.each do |cart| %>
 
-          <% if cart.user == current_user %>
-              <tr>
-                <td><%= cart.id %></td>
-                <td><%= link_to 'Show', cart_path(:cart_id => cart.id) %></td>
-              </tr>
+              <% if cart.user == current_user %>
+                  <tr>
+                    <td><%= cart.id %></td>
+                    <td><%= link_to 'Show', cart_path(:cart_id => cart.id) %></td>
+                  </tr>
+              <% end %>
           <% end %>
+        </table>
       <% end %>
-    </table>
 
     <% end %>
 
