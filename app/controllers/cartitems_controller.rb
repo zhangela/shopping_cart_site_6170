@@ -1,6 +1,5 @@
 class CartitemsController < ApplicationController
-  # GET /cartitems
-  # GET /cartitems.json
+
   def index
     @cartitems = Cartitem.all
 
@@ -10,8 +9,6 @@ class CartitemsController < ApplicationController
     end
   end
 
-  # GET /cartitems/1
-  # GET /cartitems/1.json
   def show
     @cartitem = Cartitem.find(params[:id])
 
@@ -21,8 +18,7 @@ class CartitemsController < ApplicationController
     end
   end
 
-  # GET /cartitems/new
-  # GET /cartitems/new.json
+  # creates new cart item and insert into current cart
   def new
 
     @cart = current_cart

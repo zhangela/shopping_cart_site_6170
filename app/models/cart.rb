@@ -20,10 +20,7 @@ class Cart < ActiveRecord::Base
 
 
   def is_empty
-    if cartitems.count == 0
-      return true
-    end
-    return false
+    return (cartitems.count == 0)
   end
 
   def set_status(newstat)

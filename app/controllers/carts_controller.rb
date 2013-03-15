@@ -20,17 +20,29 @@ class CartsController < ApplicationController
       @cart = current_cart
     end
 
-    if !@cart.is_empty
-      respond_to do |format|
-        format.html # show.html.erb
-        format.json { render json: @cart }
+    puts "HERE"
+    puts current_cart == @cart
+    puts current_user && current_user.is_seller
+    puts (current_user && @cart.user == current_user)
+
+    # if the user is unregistered or a seller or owns the cart
+    if (current_cart == @cart || (current_user && current_user.is_seller) || (current_user && @cart.user == current_user))
+
+      if !@cart.is_empty
+        respond_to do |format|
+          format.html # show.html.erb
+          format.json { render json: @cart }
+        end
+      else
+        respond_to do |format|
+          format.html { redirect_to items_url }
+          format.json { head :no_content }
+        end
       end
     else
-      respond_to do |format|
-        format.html { redirect_to items_url }
-        format.json { head :no_content }
-      end
+      render :text => "You do not have permission to view this cart."
     end
+
   end
 
   # GET /carts/new
