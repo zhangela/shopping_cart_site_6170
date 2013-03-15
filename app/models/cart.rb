@@ -26,8 +26,27 @@ class Cart < ActiveRecord::Base
   def set_status(newstat)
     self.status = newstat
     self.save
-    puts "SELF STATUS"
-    puts self.status
+  end
+
+  def submit
+    if self.status == 0
+      self.set_status(1)
+      self.save
+    end
+  end
+
+  def approve
+    if self.status == 1
+      self.set_status(2)
+      self.save
+    end
+  end
+
+  def deny
+    if self.status == 1
+      self.set_status(-1)
+      self.save
+    end
   end
 
 end

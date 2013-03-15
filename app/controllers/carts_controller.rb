@@ -44,12 +44,8 @@ class CartsController < ApplicationController
 
 
   def submit_cart
-    @cart = current_cart
-    puts @cart.status
-    if @cart.status == 0 || @cart.status == ""
-      @cart.set_status(1)
-      @cart.save
-    end
+    cart = current_cart
+    cart.submit
 
     respond_to do |format|
       format.html { redirect_to items_path }
@@ -60,10 +56,7 @@ class CartsController < ApplicationController
 
   def approve_cart
     cart = Cart.find(params[:cart_id])
-    if cart.status == 1
-      cart.set_status(2)
-      cart.save
-    end
+    cart.approve
 
     respond_to do |format|
       format.html { redirect_to items_path }
@@ -73,10 +66,7 @@ class CartsController < ApplicationController
 
   def deny_cart
     cart = Cart.find(params[:cart_id])
-    if cart.status == 1
-      cart.set_status(-1)
-      cart.save
-    end
+    cart.deny
 
     respond_to do |format|
       format.html { redirect_to items_path }
