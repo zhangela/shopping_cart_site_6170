@@ -1,14 +1,4 @@
 class CartsController < ApplicationController
-  # GET /carts
-  # GET /carts.json
-  def index
-    @carts = Cart.all
-
-    respond_to do |format|
-      format.html # index.html.erb
-      format.json { render json: @carts }
-    end
-  end
 
   # GET /carts/1
   # GET /carts/1.json
@@ -19,11 +9,6 @@ class CartsController < ApplicationController
     else
       @cart = current_cart
     end
-
-    puts "HERE"
-    puts current_cart == @cart
-    puts current_user && current_user.is_seller
-    puts (current_user && @cart.user == current_user)
 
     # if the user is unregistered or a seller or owns the cart
     if (current_cart == @cart || (current_user && current_user.is_seller) || (current_user && @cart.user == current_user))
@@ -43,56 +28,6 @@ class CartsController < ApplicationController
       render :text => "You do not have permission to view this cart."
     end
 
-  end
-
-  # GET /carts/new
-  # GET /carts/new.json
-  def new
-    @cart = Cart.new
-
-
-    respond_to do |format|
-      format.html # new.html.erb
-      format.json { render json: @cart }
-    end
-  end
-
-  # GET /carts/1/edit
-  def edit
-    @cart = Cart.find(params[:id])
-  end
-
-  # POST /carts
-  # POST /carts.json
-  def create
-    @cart = Cart.new(params[:cart])
-    @cart.status = 0
-
-    respond_to do |format|
-      if @cart.save
-        format.html { redirect_to @cart, notice: 'Cart was successfully created.' }
-        format.json { render json: @cart, status: :created, location: @cart }
-      else
-        format.html { render action: "new" }
-        format.json { render json: @cart.errors, status: :unprocessable_entity }
-      end
-    end
-  end
-
-  # PUT /carts/1
-  # PUT /carts/1.json
-  def update
-    @cart = Cart.find(params[:id])
-
-    respond_to do |format|
-      if @cart.update_attributes(params[:cart])
-        format.html { redirect_to @cart, notice: 'Cart was successfully updated.' }
-        format.json { head :no_content }
-      else
-        format.html { render action: "edit" }
-        format.json { render json: @cart.errors, status: :unprocessable_entity }
-      end
-    end
   end
 
   # DELETE /carts/1

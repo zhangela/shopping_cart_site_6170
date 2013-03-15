@@ -2,9 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="89625129-f179-410f-8e90-37b0dae3a2ff" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/application_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/application_controller.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/cart.rb" afterPath="$PROJECT_DIR$/app/models/cart.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/cartitem.rb" afterPath="$PROJECT_DIR$/app/models/cartitem.rb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/cartitems_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/cartitems_controller.rb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/carts_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/carts_controller.rb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
@@ -56,10 +53,37 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="carts_controller.rb" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="carts_controller.rb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/controllers/carts_controller.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="27" column="76" selection-start="609" selection-end="609" vertical-scroll-proportion="0.24812031">
+            <state line="30" column="74" selection-start="795" selection-end="795" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="items_controller.rb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/controllers/items_controller.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="75" column="10" selection-start="1717" selection-end="1717" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="sessions_controller.rb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/controllers/sessions_controller.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="14" column="121" selection-start="391" selection-end="391" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="users_controller.rb" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/controllers/users_controller.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="18" column="29" selection-start="425" selection-end="425" vertical-scroll-proportion="0.41221374">
               <folding />
             </state>
           </provider>
@@ -86,7 +110,7 @@
       <file leaf-file-name="cartitems_controller.rb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/controllers/cartitems_controller.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="82" column="27" selection-start="1819" selection-end="1819" vertical-scroll-proportion="0.0">
+            <state line="9" column="113" selection-start="240" selection-end="240" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -122,9 +146,9 @@
         <option value="$PROJECT_DIR$/app/controllers/users_controller.rb" />
         <option value="$PROJECT_DIR$/app/controllers/sessions_controller.rb" />
         <option value="$PROJECT_DIR$/app/models/cartitem.rb" />
-        <option value="$PROJECT_DIR$/app/controllers/cartitems_controller.rb" />
         <option value="$PROJECT_DIR$/app/controllers/application_controller.rb" />
         <option value="$PROJECT_DIR$/app/models/cart.rb" />
+        <option value="$PROJECT_DIR$/app/controllers/cartitems_controller.rb" />
         <option value="$PROJECT_DIR$/app/controllers/carts_controller.rb" />
       </list>
     </option>
@@ -777,11 +801,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/views/items/edit.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/cartitems/_form.html.erb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="22" column="82" selection-start="523" selection-end="523" vertical-scroll-proportion="-13.75" />
@@ -797,16 +816,6 @@
         <state line="13" column="83" selection-start="337" selection-end="337" vertical-scroll-proportion="0.13235295">
           <folding />
         </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/sessions_controller.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="121" selection-start="391" selection-end="391" vertical-scroll-proportion="0.32061067" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/users_controller.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="29" selection-start="425" selection-end="425" vertical-scroll-proportion="0.41221374" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/bootstrap.css">
@@ -834,13 +843,6 @@
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/cartitems_controller.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="82" column="27" selection-start="1819" selection-end="1819" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/models/cart.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="12" column="19" selection-start="305" selection-end="305" vertical-scroll-proportion="0.0">
@@ -862,9 +864,37 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/cartitems_controller.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="9" column="113" selection-start="240" selection-end="240" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/carts_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="27" column="76" selection-start="609" selection-end="609" vertical-scroll-proportion="0.24812031">
+        <state line="30" column="74" selection-start="795" selection-end="795" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/items_controller.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="75" column="10" selection-start="1717" selection-end="1717" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/sessions_controller.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="14" column="121" selection-start="391" selection-end="391" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/users_controller.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="18" column="29" selection-start="425" selection-end="425" vertical-scroll-proportion="0.41221374">
           <folding />
         </state>
       </provider>

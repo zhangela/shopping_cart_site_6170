@@ -1,23 +1,5 @@
 class CartitemsController < ApplicationController
 
-  def index
-    @cartitems = Cartitem.all
-
-    respond_to do |format|
-      format.html # index.html.erb
-      format.json { render json: @cartitems }
-    end
-  end
-
-  def show
-    @cartitem = Cartitem.find(params[:id])
-
-    respond_to do |format|
-      format.html # show.html.erb
-      format.json { render json: @cartitem }
-    end
-  end
-
   # creates new cart item and insert into current cart
   def new
 
@@ -43,17 +25,6 @@ class CartitemsController < ApplicationController
   # GET /cartitems/1/edit
   def edit
     @cartitem = Cartitem.find(params[:id])
-  end
-
-  # POST /cartitems
-  # POST /cartitems.json
-  def create
-    @cartitem = Cartitem.new(params[:cartitem])
-
-    respond_to do |format|
-      format.html { redirect_to cart_path }
-      format.json { head :no_content }
-    end
   end
 
   # PUT /cartitems/1
