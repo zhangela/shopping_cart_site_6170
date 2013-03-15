@@ -11,7 +11,7 @@ class CartsController < ApplicationController
     end
 
     # if the user is unregistered or a seller or owns the cart
-    if (current_cart == @cart || (current_user && current_user.is_seller) || (current_user && @cart.user == current_user))
+    if current_cart == @cart || (current_user && current_user.is_seller) || (current_user && @cart.user == current_user)
 
       if !@cart.is_empty
         respond_to do |format|
