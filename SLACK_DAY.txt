@@ -1,1 +1,3 @@
-22
+2
+
+I'm assuming the slack days propagate to phase 3 as well.
