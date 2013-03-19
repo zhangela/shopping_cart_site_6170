@@ -2,7 +2,7 @@ class ApplicationController < ActionController::Base
 
     protect_from_forgery
     helper_method :current_user, :current_cart
-    helper_method :all_submitted_carts, :all_approved_carts, :all_denied_carts
+    helper_method :all_submitted_carts, :all_approved_carts, :all_denied_carts, :all_saved_carts
     before_filter :add_value_to_session
 
     private
@@ -49,7 +49,14 @@ class ApplicationController < ActionController::Base
 
     private
     def all_denied_carts
-      carts = Cart.find_all_by_status(-1)
+      carts = Cart.find_all_by_status(-1) # -1 = denied carts
+      return carts
+    end
+
+
+    private
+    def all_saved_carts
+      carts = Cart.find_all_by_status(10)  # 10 =  saved carts
       return carts
     end
 

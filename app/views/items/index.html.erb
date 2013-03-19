@@ -101,6 +101,29 @@
 <% else %>
 
     <% if current_user %>
+
+
+
+        <h1>Saved Orders</h1>
+
+        <table class="table">
+          <tr>
+            <th>Cart ID</th>
+            <th>Show</th>
+          </tr>
+
+          <% @carts = all_saved_carts %>
+          <% @carts.each do |cart| %>
+
+              <% if cart.user == current_user %>
+                  <tr>
+                    <td><%= cart.id %></td>
+                    <td><%= link_to 'Show', cart_path(:cart_id => cart.id) %></td>
+                  </tr>
+              <% end %>
+          <% end %>
+        </table>
+
         <h1>Submitted Orders</h1>
 
             <table class="table">

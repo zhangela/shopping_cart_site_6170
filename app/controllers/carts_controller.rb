@@ -74,4 +74,15 @@ class CartsController < ApplicationController
     end
   end
 
+  def save_cart
+    cart = current_cart
+    cart.save_cart
+
+    respond_to do |format|
+      format.html { redirect_to items_path }
+      format.json { head :no_content }
+    end
+
+  end
+
 end

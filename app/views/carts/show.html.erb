@@ -23,6 +23,9 @@
   <% if @cart.status == -1 %>
       Denied by Seller
   <% end %>
+  <% if @cart.status == 10 %>
+      Saved
+  <% end %>
 
 </p>
 
@@ -75,6 +78,12 @@
         <div class="btn">
           <%= link_to 'Place Order', submit_cart_path %>
         </div>
+
+        <% if @cart.status == 0 %>
+            <div class="btn">
+              <%= link_to 'Save Cart for Later', save_cart_path %>
+            </div>
+        <% end %>
     <% else %>
         <p>Log in to place order!</p>
     <% end %>

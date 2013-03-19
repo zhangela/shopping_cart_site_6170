@@ -29,8 +29,15 @@ class Cart < ActiveRecord::Base
   end
 
   def submit
-    if self.status == 0
+    if self.status == 0 or self.status == 10
       self.set_status(1)
+      self.save
+    end
+  end
+
+  def save_cart
+    if self.status == 0
+      self.set_status(10)
       self.save
     end
   end
