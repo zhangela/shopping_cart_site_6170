@@ -8,10 +8,8 @@ Please put it here: http://azcart.herokuapp.com
 
 ###Description
 
-DESCRIPTION
 AZCart is a lightweight web application that simulates a shopping cart experience online. AZCart provides a similar service as Opencart, Shopify, Paypal, and Stripe, but it fulfills the shopkeepers’ need for a more basic and minimal setup effort required product.
 
-FEATURES
 When a shopper is browsing a website, they can
 1) create account/log in/log out
 2) add items to the shopping cart
