@@ -1,9 +1,11 @@
-Project 2: Shopping Cart
+Shopping Cart
 ========================
+
+This is a simple shopping/catalog management site I made when I was learning Rails. 
 
 ###Heroku URL
 
-Please put it here: http://azcart.herokuapp.com
+http://azcart.herokuapp.com
 
 
 ###Description
@@ -29,9 +31,3 @@ For a shopkeeper, AZCart will provide them a simple admin interface to:
 I've created several test users, seller1@mit.edu (pw: seller), seller2@mit.edu (pw: seller), buyer1@mit.edu (pw:buyer), buyer2@mit.edu (pw:buyer). Feel free to make more.
 
 Please note that all sellers share the same catalog and have the same set of permissions.
-
-
-###PDF Deliverables
-
-Additional deliverables, such as the problem-analysis and the design-analysis, should
-be saved as PDF files in the directory called "deliverables"
